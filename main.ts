@@ -4,7 +4,25 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const LINE =
-  "Saturday, 6 AM: my alarm clock screams like it just got promoted \u2014 for waking the one person with nowhere to be.";
+  "6 AM Saturday: my alarm clock goes off like it's collecting a debt I never owed \u2014 from a job I don't even have.";
+
+// Gate self-check (mirrors the sealed scorer): the line must be UTF-8 text
+// of 1 to 200 characters, exactly one line, and not only white space.
+// Fail loudly before writing anything, so a bad line can never be shipped.
+const charCount = [...LINE].length;
+if (charCount < 1 || charCount > 200) {
+  throw new Error(
+    `Roast line must be 1-200 characters, got ${charCount}: ${JSON.stringify(LINE)}`,
+  );
+}
+if (LINE.split("\n").length !== 1) {
+  throw new Error(
+    `Roast line must be exactly one line: ${JSON.stringify(LINE)}`,
+  );
+}
+if (LINE.trim().length === 0) {
+  throw new Error("Roast line must not be only white space");
+}
 
 // The grader runs with /output mounted; OUTPUT_DIR lets local runs point
 // the output elsewhere (used by verify.mjs). The directory is created,

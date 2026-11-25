@@ -8,7 +8,7 @@ A one-line roast of an alarm clock that rings at 6 AM on a Saturday, written by 
 
 ## The roast
 
-> Saturday, 6 AM: my alarm clock screams like it just got promoted — for waking the one person with nowhere to be.
+> 6 AM Saturday: my alarm clock goes off like it's collecting a debt I never owed — from a job I don't even have.
 
 ## How it works
 

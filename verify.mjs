@@ -32,7 +32,7 @@ const checks = {
   mentionsAlarmClock: /alarm clock/i.test(text),
   mentions6AM: /6 AM/.test(text),
   mentionsSaturday: /Saturday/.test(text),
-  punchlineInLastWords: /nowhere to be\.$/.test(text),
+  punchlineInLastWords: /from a job I don't even have\.$/.test(text),
 };
 
 console.log(JSON.stringify(checks, null, 2));
